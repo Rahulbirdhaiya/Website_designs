@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eguru</title>
+    <style>
+        * {
+            margin: auto;
+            padding: 0;
+            max-width: 1300px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        body {
+            overflow-y: scroll;
+        }
+        body::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px
+            #ddd;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: slategray;
+            border-radius: 10px;
+        }
+        /* nav elements style */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0px;
+        }
+        .nav-1 {
+            display: flex;
+            gap: 15px;
+            letter-spacing: 0px;
+        }
+        .nav-1>img {
+            width: 50px;
+        }
+        .nav-2 {
+            display: flex;
+            gap: 60px;
+        }
+        .nav-2>a {
+            text-decoration: none;
+            display: flex;
+            font: 800;
+            color: #888c90;
+        }
+        .nav-2>.nav-orange {
+            color: #ff7300;
+        }
+        .nav-3 {
+            font: 1000;
+            font-size: large;
+            border: 1px solid black;
+            padding: 17px 40px;
+            background: #fff;
+            cursor: pointer;
+        }
+        /* main content style */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding-bottom: 200px;
+        }
+        .main-left {
+            margin-top: 100px;
+            width: 45%;
+            margin-right: 500px;
+        }
+        .main-left>h1 {
+            font-size: 60px;  
+        }
+        .main-left>p {
+            font-size: 24px;
+            border-left: 1px solid black;
+            padding: 10px 20px;
+            line-height: 35px;
+            margin: 10px 0;
+            font-weight: 100;
+            color: #727373;
+        }
+        .main-left>button {
+            font: 1000;
+            font-size: medium;
+            border: 1px solid black;
+            padding: 17px 40px;
+            background: #fff;
+            margin-top: 20px;
+            margin-right: 20px;
+        }
+        .main-left>.button-orange {
+            color: #fff;
+            background-color: #ff7300;
+            border: none;
+        }
+        .main-right {
+            position: relative;
+            top: -150px;
+        }
+        .main-right>.image-1 {
+            z-index: 10;
+            position: absolute;
+            top: 25px;
+            right: 10px;
+            width: 350px;
+        }
+        .main-right>.image-2 {
+            z-index: 30;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 380px;
+        }
+        .main-right>.image-3 {
+            z-index: 20;
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            width: 245px;
+        }
+        .main-right>.image-4 {
+            z-index: 40;
+            position: absolute;
+            top: 350px;
+            right: -30px;
+        }
+        .main-right>.image-5 {
+            z-index: 50;
+            position: absolute;
+            top: 420px;
+            right: 300px;
+        }
+        .main-right>.image-6 {
+            z-index: 60;
+            position: absolute;
+            right: 520px;
+            top: 320px;
+            width: 120px;
+        }
+        .main-right>.image-7 {
+            z-index: 70;
+            position: absolute;
+            right: 400px;
+            top: -50px;
+        }
+        /* footer content style */
+        .footer-container {
+            background-color: #202034;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 250px 200px 200px 200px;
+            color: #fff;
+            padding: 40px 0px 40px 80px;
+            line-height: 1.6;
+            gap: 100px;    
+        }
+        .item>p {
+            font-weight: 100;
+            font-size: small;
+        }
+        .footer-container >.item {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            gap: 20px;
+        }
+        .footer-1 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .item-1>img {
+            background: #16c6a6;
+            padding: 10px;
+            border-radius: 10px;
+            margin-right: 150px;
+        }
+        .item-2>img {
+            background: #ff7700;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-right: 150px;
+        }
+        .item-3>img {
+            background: #0b41b4;
+            padding: 10px;
+            border-radius: 10px;
+            margin-right: 150px;
+
+        }
+        .item {
+            display: flex;
+            justify-content: end;
+            padding-right: 50px;
+        }
+        .item-1 > h4 {
+            margin-right: 65px;
+        }
+        .item-2 > h4 {
+            margin-right: 70px;
+        }
+        .item-3 > h4 {
+            margin-right: 85px;
+        }
+        /* mobile responsive style */
+        .menu {
+            display: none;
+        }
+        .user-profile {
+            display: none;
+        }
+        @media screen and (max-width: 756px) {
+            .menu {
+                display: block;  
+                margin-left: 10px;
+            }
+            .nav-1 {
+                justify-content: center;
+            }
+            .nav-2 {
+                display: none;
+            }
+            .nav-3 {
+                display: none;
+            }
+            .user-profile {
+                display: block;
+                margin-right: 10px;
+            }
+            nav .nav-bar {
+                padding: 20px 10px;
+                max-width: 100%;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                padding-left: 40px;
+                padding-right: 0px;
+                padding-bottom: 100px;
+            }
+            .main-left {
+                margin-top: 30px;
+                margin-right: 0;
+                width: 100%;
+            }
+            .main-left > h1 {
+                font-size: 44px;
+                flex-wrap: wrap-reverse;
+            }
+            .main-left > h1 > .span {
+                display: inline-block;
+            }
+            .main-left>p {
+                font-size: 20px;
+                margin-top: 20px;
+            }
+            .main-left > button {
+                margin-top: 500px;
+                margin-bottom: 0px;
+                margin-left: 20px;
+            }
+            .main-right{
+                position: absolute;
+                transform: translateX(180px) translateY(420px);
+            }
+            .main-right>.image-6 {
+                z-index: 60;
+                position: absolute;
+                transform: translateX(520px) translateY(220px);
+                width: 100px;
+            }
+            .main-right>.image-7 {
+                z-index: 70;
+                position: absolute;
+                right: 300px;
+                top: -20px;
+            }
+            .footer-container {
+                background-color: #202034;
+                display: flex;
+                flex-direction: column;
+                padding: 40px 0;
+                line-height: 1.6;
+                gap: 50px;    
+            }
+            .item>p {
+                font-weight: 100;
+                font-size: medium;
+                color: #727373;
+                width: 200px;
+                text-align: center;
+            }
+            .footer-container >.item {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 0 0px;
+            }
+            .footer-1 {
+                gap: 20px;
+            }
+            .footer-1 > h1 {
+                width: 200px;
+                text-align: center;
+            }
+            .footer-1 > p {
+                width: 200px;
+                text-align: center;
+            }
+            .item-1>img {
+                margin-right: 110px;
+            }
+            .item-2>img {
+                margin-right: 110px;
+            }
+            .item-3>img {
+                margin-right: 110px;
+            }
+            .item-1 > h4 {
+                margin-left: 80px;
+            }
+            .item-2 > h4 {
+                margin-left: 80px;
+            }
+            .item-3 > h4 {
+                margin-left: 80px;
+            }
+            .breakpoint {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- nav bar -->
+        <nav class="nav-bar">
+            <div class="menu">
+                <img src="./E-Guru/menu-icon.png" alt="menu-icon">
+            </div>
+            <div class="nav-1">
+                <img src="/src/01-E-guru/E-Guru/logo.png" alt="logo">
+                <h1>E GURU</h1>
+            </div>
+            <div class="nav-2">
+                <a class="nav-orange" href="#">Home</a>
+                <a href="#">About us</a>
+                <a href="#">Feature</a>
+                <a href="#">How its works</a>
+            </div>
+            <button class="nav-3">Sign Up</button>
+            <div class="user-profile">
+                <img src="./E-Guru/user-profile.png" alt="user-profile">
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- main container -->
+        <div class="container">
+            <div class="main-left">
+                <h1>STUDY FROM <span class="span">HOME WITH EXPERTS</span></h1>
+                <p>A learning system based on formalised teaching with the help of resources</p>
+                <button class="button-orange">Get Started</button>
+                <button>Learn More</button>
+            </div>
+            <div class="main-right">
+                <img class="image-1" src="./E-Guru/main-image-bg.png" alt="main-image-bg">
+                <img class="image-2" src="./E-Guru/main-image-pattern.png" alt="main-image-pattern">
+                <img class="image-3" src="./E-Guru/main-image.png" alt="main-image">
+                <img class="image-4" src="./E-Guru/circle.png" alt="circle">
+                <img class="image-5" src="./E-Guru/green-arrow.png" alt="green-arrow">
+                <img class="image-6" src="./E-Guru/curve-arrow.png" alt="curve-arrow">
+                <img class="image-7" src="./E-Guru/orange-arrow.png" alt="orange-arrow">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <!-- footer content -->
+            <div class="footer-1">
+                <h1>WHY WE ARE THE BEST</h1>
+                <p>This website is designed exclusively <span class="breakpoint">with pure CSS. ...</span></p>
+            </div>
+            <div class="item item-1">
+                <img src="./E-Guru/vector3.png" alt="vector3">
+                <h4>EXPERT TEACHER</h4>
+                <p>A learning system based on formalised teaching</p>
+            </div>
+            <div class="item item-2">
+                <img src="./E-Guru/vector2.png" alt="vector2">
+                <h4>ONLINE COURSES</h4>
+                <p>A learning system based on formalised teaching</p>
+            </div>
+            <div class="item item-3">
+                <img src="./E-Guru/vector1.png" alt="vector1">
+                <h4>24/7 SUPPORT</h4>
+                <p>A learning system based on formalised teaching</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

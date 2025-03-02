@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+
+        * {
+            max-width: 1500px;
+            margin: auto;
+            width: 100%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        /* section-1 */
+        .section-1 {
+            background: url(./assets/background.png)
+            no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+        }
+        .nav-bar {
+            color: #fff;
+            display: flex;
+            width: 72%;
+            padding-top: 10px;
+        }
+        .nav-items {
+            display: flex;     
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin-right: 400px;
+        }
+        .nav-links>a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .button-1 {
+            border-radius: 10px;
+            color: #fff;
+            background:#239eeb;
+            width: 220px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .button-1>p {
+            width: 80%;
+            padding-left: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-right: 10px;
+            font-weight: 900;
+        }
+        .button-1>i {
+            width: 10%;
+            padding-right: 20px;
+            padding-top: 23px;
+            padding-bottom: 20px;
+        }
+        .container-1 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            height: 80vh;
+            width: 72%;
+            margin: auto;
+            align-content: center;
+        }
+        .sub-container-01 {
+            color: #fff;
+            margin-top: 250px;
+        }
+        .sub-container-01>h1 {
+            font-size: 60px;
+            font-family: arial;
+            font-weight: 800;
+        }
+        .sub-container-01>p {
+            font-size: 24px;
+            font-family: 'arial';
+            margin-top: 40px;
+            word-spacing: 2px;
+            letter-spacing: 1px;
+            font-weight: 100;
+        }
+        .button-frame {
+            display: flex;
+            margin-top: 40px;
+            gap: 20px;
+            width: 350px;
+            margin-right: 300px;
+        }
+        .button-2 {
+            border-radius: 100px;
+            color: #fff;
+            border: 2px solid #28a0eb;
+            background-color: #239eeb;
+            padding: 15px 10px;
+            font-size: 16px;
+            font-weight: 900;
+            cursor: pointer;
+            text-align: center;
+        }
+        .button-3 {
+            border-radius: 100px;
+            border: 2px solid white;
+            color: #fff;
+            padding: 15px 10px;
+            font-size: 16px;
+            font-weight: 900;
+            cursor: pointer;
+            text-align: center;
+        }
+        .sub-container-02 {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 40px 50px;
+            width: 270px;
+            height: 560px;
+            margin-top: 120px;
+            margin-left: 60px;
+        }
+        .form-heading {
+            padding-bottom: 40px;
+        }
+        .group-input {
+            padding: 12px 0px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: larger;
+            padding-left: 12px;
+        }
+        .button-4 {
+            background-color: #239eeb;
+            color: #fff;
+            font-weight: 900;
+            text-align: center;
+            padding: 15px 65px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #time {
+            margin-bottom: 60px;
+            font-size: medium;
+        }
+        /* Section 2 */
+        .section-2 {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 75%;
+        }
+        .sub-container-03>h1 {
+            font-size: 42px;
+            font-weight: 900;
+            font-family: arial;
+        }
+        .sub-container-03>p {
+            font-size: 18px;
+            color: #5e5e5e;
+            margin-top: 20px;
+        }
+        .sub-container-04 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .small-card {
+            border: #239eeb 1px solid;
+            border-radius: 10px;
+            width: 320px;
+            height: 400px;
+            text-align: left;
+        }
+        .small-card-top {
+            display: flex;
+            padding: 40px 0px;
+            background: #8acaf3;
+            color: #fff;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+        .small-card-top>i {
+            padding: 40px 35px;
+            border-radius: 100%;
+            background: #fff;
+            width: 48px;
+            text-align: center;
+            margin-left: 50px;
+            margin-right: 10px;
+            color: #239eeb;
+        }
+        .small-card>ul {
+            list-style-type: none;
+            margin-top: 30px;
+        }
+        .small-card>ul>li {
+            margin-top: 10px;
+            color: #5e5e5e;
+        }
+        .sky-text {
+            color: #239eeb;
+            font-size: large;
+            margin-top: 10px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+        /* section-3 */
+        .sec-3-bg {
+            background: #e0e0e0;
+        }
+        .section-3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+            width: 75%;
+            text-align: center;            
+        }
+        .sub-container-05>h1 {
+            font-size: 42px;
+            font-weight: 900;
+            font-family: arial;
+        }
+        .sub-container-05>p {
+            font-size: 18px;
+            color: #5e5e5e;
+            margin-top: 20px;
+        }
+        .sub-container-06 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .rating-card {
+            padding: 40px;
+            text-align: left;
+            background: #fff;
+            width: 250px;
+            gap: 20px;
+            height: 200px;
+        }
+        .rating-card>p {
+            line-height: 25px;
+            color: #5e5e5e;
+            margin-top: 20px;
+        }
+        .stars {
+            display: flex;  
+            color: goldenrod;
+            width: 120px;
+            margin-left: 0px;
+        }
+        .rating-card>img {
+            width: 50px;
+            margin-top: 20px;
+        }
+        /* section-4 */
+        .section-4 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 75%;
+            text-align: center;            
+        }
+        .sub-container-07>h1 {
+            font-size: 42px;
+            font-family: arial;
+        }
+        .sub-container-07>p {
+            font-size: 18px;
+            color: #5e5e5e;
+            margin-top: 20px;
+        }
+        .sub-container-08 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .sec-3-elem>i {
+            color: #239eeb;
+            position: absolute;
+            right: 150px;
+            top: 5px;
+        }
+        .sec-3-items>p {
+            color: #5e5e5e;
+            text-align: left;
+        }
+        .sec-3-items>h4 {
+            font-weight: bolder;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+        .sec-3-elem {
+            width: 250px;
+            line-height: 25px;
+            display: flex;
+            position: relative;
+        }
+        /* section-5 */
+        .section-5 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 150vh;
+            width: 75%;
+            text-align: center;            
+        }
+        .sub-container-09>h1 {
+            font-size: 42px;
+            font-family: arial;
+        }
+        .sub-container-09>p {
+            font-size: 16px;
+            color: #5e5e5e;
+            margin-top: 15px;
+        }
+        .sub-container-10 {
+            display: flex; 
+        }
+        .card {
+            border: #239eeb 1px solid;
+            border-radius: 10px;
+            height: 570px;
+            width: 270px;
+            padding: 40px;
+        }
+        .card>.list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-bottom: 40px;
+        }
+        .card>.list>span {
+            display: flex;
+            text-align: left;
+            width: 240px;
+        }
+        .card>.list>span>i {
+            width: 10px;
+            text-align: left;
+            color: #2ee59f;
+            font-size: 25px;
+        }
+        .card>h1 {
+            padding-top: 30px;
+            padding-bottom: 40px;
+        }
+        .card>p {
+            padding-bottom: 40px;
+            font-weight: bolder;
+        }
+        .price {
+            color: #239eeb;
+            font-size: 40px;
+            font-weight: 900;
+        }
+        .cost {
+            padding-bottom: 40px;
+            
+        }
+        .unit {
+            color: #5ab0e6;
+            font-weight: 900;
+            padding-left: 5px;
+        }
+        .card>button {
+            background: #239eeb;
+            color: #fff;
+            border-color: #239eeb;
+            border-radius: 5px;
+            padding: 15px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        .Standard {
+            background-color: #171822;
+            color: #fff;
+            height: 620px;
+        }
+        .free {
+            margin-top: 50px;
+            margin-left: 40px;
+        }
+        .premium {
+            margin-top: 50px;
+            margin-right: 40px;
+        }
+        .sec-5-bg {
+            background: #efefef;
+        }
+        /* section-6 */
+        .section-6 {
+            background: #171822;
+            color: #fff;
+        }
+        .container-6 {
+            width: 75%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            height: 300px;
+        }
+        .sub-container-11>h1 {
+            font-size: 36px;
+        }
+        .container-6>span {
+            background: #239eeb;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            width: 70%;
+            border-radius: 5px;
+            padding-right: 20px;
+            margin-left: 120px;
+            cursor: pointer;
+        }
+        #email {
+            padding: 20px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            margin-right: 20px;
+            
+        }
+        /* section-7 */
+        .section-7 {
+            width: 75%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 50px 0px;
+        }
+        .sec-7-items>h2 {
+            padding-bottom: 20px;
+        }
+        .sec-7-items>p {
+            padding-bottom: 15px;
+            color: #5e5e5e;
+        }
+        .i-7 {
+            display: flex;
+            width: 70px;
+            color: #239eeb;
+            margin-right: 250px;
+        }
+        .last {
+            margin-top: -0px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- section-1 -->
+        <section class="section-1">
+            <nav class="nav-bar">
+                <div class="nav-items">
+                    <h2>BrandName</h2>
+                    <div class="nav-links">
+                        <a href="#">Home</a>
+                        <a href="#">Product</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+                <div class="button-1"><p>Get Quote now</p><i class="fa-solid fa-arrow-right"></i></div>
+            </nav>
+                <div class="container-1">
+                    <div class="sub-container-01">
+                        <h1>Meet the Best Hospital</h1>
+                        <p>we know how large object will act,
+                            <br> but things on a small scale</p>
+                        <div class="button-frame">
+                            <span class="button-2">Get Quote Now</span>
+                            <span class="button-3">Learn more</span>
+                        </div>
+                    </div>
+                    <div class="sub-container-02">
+                        <form action="#" method="get">
+                            <h1 class="form-heading">Book your Appointment</h1>
+                            <label class="group-label" for="name">Name *</label>
+                            <input class="group-input" type="text" name="name" id="name" placeholder="Full Name" required>
+                            <label class="group-label" for="email">Email address *</label>
+                            <input class="group-input" type="email" name="email" id="emails" placeholder="example@gmail.com" required>
+                            <label class="group-label" for="department">Department *</label>
+                            <select  class="group-input" name="department" id="department" placeholder="Select Department" required>
+                                <option value="dentist">Dentist</option>
+                                <option value="ortho">Ortho</option>
+                            </select>
+                            <label class="group-label" for="time">Time *</label>
+                            <select class="group-input" name="time" id="time" required>
+                                <option value="am">9 AM</option>
+                                <option value="pm">4 PM</option>
+                            </select>
+                            <span class="button-4">Book Appointment</span>
+                        </form>
+                    </div>
+                </div>
+        </section>
+    </header>
+    <main>
+        <!-- section-2  -->
+        <section class="section-2">
+            <div class="sub-container-03">
+                <h1>Leading Medicine</h1>
+                <p>Problems trying to resolve the conflict between <br> the two realms of classical physics Newtonian mechanics.</p>
+            </div>
+            <div class="sub-container-04">
+                <div class="small-card">
+                    <div class="small-card-top">
+                        <i class="fa-solid fa-user-group"></i>
+                        <h3>Emergency Case</h3>
+                    </div>
+                    <ul>
+                        <li>- The best Products start with Figma</li>
+                        <li>- Design with real data</li>
+                        <li>- Lightning fast prototyping</li>
+                        <li>- Fastest way to organize</li>
+                        <li>- Work at the speed of thought.</li>
+                        <p class="sky-text">Learn more</p>
+                    </ul>
+                </div>
+                <div class="small-card">
+                    <div class="small-card-top">
+                        <i class="fa-solid fa-user-group"></i>
+                        <h3>Cancer care</h3>
+                    </div>
+                    <ul>
+                        <li>- The best Products start with Figma</li>
+                        <li>- Design with real data</li>
+                        <li>- Lightning fast prototyping</li>
+                        <li>- Fastest way to organize</li>
+                        <li>- Work at the speed of thought.</li>
+                        <p class="sky-text">Learn more</p>
+                    </ul>
+                </div>
+                <div class="small-card">
+                    <div class="small-card-top">
+                        <i class="fa-solid fa-user-group"></i>
+                        <h3>Health Queries</h3>
+                    </div>
+                    <ul>
+                        <li>- The best Products start with Figma</li>
+                        <li>- Design with real data</li>
+                        <li>- Lightning fast prototyping</li>
+                        <li>- Fastest way to organize</li>
+                        <li>- Work at the speed of thought.</li>
+                        <p class="sky-text">Learn more</p>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- section-3  -->
+        <div class="sec-3-bg">
+            <section class="section-3">
+                <div class="sub-container-05">
+                    <h1>Leading Medicine</h1>
+                    <p> Problems trying to resolve the conflict between <br> the two realms of classical physics Newtonian mechanics.</p>
+                </div>
+                <div class="sub-container-06">
+                    <div class="rating-card">
+                        <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+                        <p>Slate hleps you see how many more days you need to work to reach your financial goal.</p>
+                        <img src="./assets/user.1.png" alt="user1">
+                    </div>
+                    <div class="rating-card">
+                        <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+                        <p>Slate hleps you see how many more days you need to work to reach your financial goal.</p>
+                        <img src="./assets/user.2.png" alt="user2">
+                    </div>
+                    <div class="rating-card">
+                        <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+                        <p>Slate hleps you see how many more days you need to work to reach your financial goal.</p>
+                        <img src="./assets/user.3.png" alt="user3">
+                    </div>
+                </div>
+        </div>
+        </section>
+        <!-- section-4  -->
+        <section class="section-4">
+            <div class="sub-container-07">
+                <h1>FAQ</h1>
+                <p>Problems trying to resolve the conflict between <br> the two realms of classical physics Newtonian mechanics</p>
+            </div>
+            <div class="sub-container-08">
+                <div class="sec-3-elem">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <div class="sec-3-items">
+                        <h4>the quick fox jumps over the lazy dog</h4>
+                        <p>things on a very small scale behave like nothing</p>
+                    </div>
+                </div>
+                <div class="sec-3-elem">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <div class="sec-3-items">
+                        <h4>the quick fox jumps over the lazy dog</h4>
+                        <p>things on a very small scale behave like nothing</p>
+                    </div>
+                </div>
+                <div class="sec-3-elem">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <div class="sec-3-items">
+                        <h4>the quick fox jumps over the lazy dog</h4>
+                        <p>things on a very small scale behave like nothing</p>
+                    </div>
+                </div>
+                <div class="sec-3-elem">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <div class="sec-3-items">
+                        <h4>the quick fox jumps over the lazy dog</h4>
+                        <p>things on a very small scale behave like nothing</p>
+                    </div>
+                </div>
+                <div class="sec-3-elem">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <div class="sec-3-items">
+                        <h4>the quick fox jumps over the lazy dog</h4>
+                        <p>things on a very small scale behave like nothing</p>
+                    </div>
+                </div>
+                <div class="sec-3-elem">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <div class="sec-3-items">
+                        <h4>the quick fox jumps over the lazy dog</h4>
+                        <p>things on a very small scale behave like nothing</p>
+                    </div>
+                </div>
+                <div class="sec-3-elem">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <div class="sec-3-items">
+                        <h4>the quick fox jumps over the lazy dog</h4>
+                        <p>things on a very small scale behave like nothing</p>
+                    </div>
+                </div>
+                <div class="sec-3-elem">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <div class="sec-3-items">
+                        <h4>the quick fox jumps over the lazy dog</h4>
+                        <p>things on a very small scale behave like nothing</p>
+                    </div>
+                </div>
+                <div class="sec-3-elem">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <div class="sec-3-items">
+                        <h4>the quick fox jumps over the lazy dog</h4>
+                        <p>things on a very small scale behave like nothing</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </section>
+        <!-- section-5  -->
+        <div class="sec-5-bg">
+            <section class="section-5">
+                <div class="sub-container-09">
+                    <h1>Pricing</h1>
+                    <p> Problems trying to resolve the conflict between <br> the two realms of classical physics Newtonian mechanics.</p>
+                </div>
+                <div class="sub-container-10">
+                    <div class="free card">
+                        <h1>FREE</h1>
+                        <p>Organize across all <br> apps by hand</p>
+                        <div class="cost"><span class="price">0</span><span class="unit"><sup>$</sup><sub>per month</sub></span></div>
+                        <div class="list">
+                            <span><i class="fa-solid fa-circle-check"></i>Unlimited Product Update</span>
+                            <span><i class="fa-solid fa-circle-check"></i>Unlimited Product Update</span>
+                            <span><i class="fa-solid fa-circle-check"></i>Unlimited Product Update</span>
+                            <span><i class="fa-regular fa-circle-check"></i>1 GB cloud Storage</span>
+                            <span><i class="fa-regular fa-circle-check"></i>Email Community Support</span>
+                        </div>
+                        <button>Try for Free</button>
+                    </div>
+                    <div class="Standard card">
+                        <h1>STANDARD</h1>
+                        <p>Organize across all <br> apps by hand</p>
+                        <div class="cost"><span class="price">9.99</span><span class="unit"><sup>$</sup><sub>per month</sub></span></div>
+                        <div class="list">
+                            <span><i class="fa-solid fa-circle-check"></i>Unlimited Product Update</span>
+                            <span><i class="fa-solid fa-circle-check"></i>Unlimited Product Update</span>
+                            <span><i class="fa-solid fa-circle-check"></i>Unlimited Product Update</span>
+                            <span><i class="fa-solid fa-circle-check"></i>1 GB cloud Storage</span>
+                            <span><i class="fa-solid fa-circle-check"></i>Email Community Support</span>
+                        </div>
+                        <button>Try for Free</button>
+                    </div>
+                    <div class="premium card">
+                        <h1>PREMIUM</h1>
+                        <p>Organize across all <br> apps by hand</p>
+                        <div class="cost"><span class="price">19.99</span><span class="unit"><sup>$</sup><sub>per month</sub></span></div>
+                        <div class="list">
+                            <span><i class="fa-solid fa-circle-check"></i>Unlimited Product Update</span>
+                            <span><i class="fa-solid fa-circle-check"></i>Unlimited Product Update</span>
+                            <span><i class="fa-solid fa-circle-check"></i>Unlimited Product Update</span>
+                            <span><i class="fa-solid fa-circle-check"></i>1 GB cloud Storage</span>
+                            <span><i class="fa-solid fa-circle-check"></i>Email Community Support</span>
+                        </div>
+                        <button>Try for free</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- section-6  -->
+        <section class="section-6">
+            <div class="container-6">
+                <div class="sub-container-11">
+                    <h1>Get In Touch</h1>
+                    <p>The gradual accumulation of information about atomic and <br> small-scale behaviour during the first quarter of the 20th</p>
+                </div>
+                <span><input type="email" name="email" id="email" placeholder="Your Email">Subscribe</span>
+            </div>
+        </section>
+        <!-- section-7  -->
+        <section class="section-7">
+            <div class="sec-7-items last">
+                <h2>Get IN Touch</h2>
+                <p>This website is designed  <br>exclusively with pure CSS.</p>
+                <div class="i-7">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+            <div class="sec-7-items">
+                <h2>Company info</h2>
+                <p>About us</p>
+                <p>Carrier</p>
+                <p>We are hiring</p>
+                <p>Blog</p>
+            </div>
+            <div class="sec-7-items">
+                <h2>Features</h2>
+                <p>Bussiness Marketing</p>
+                <p>User Analytic</p>
+                <p>Live Chat</p>
+                <p>Unlimited Support</p>
+            </div>
+            <div class="sec-7-items">
+                <h2>Resources</h2>
+                <p>iOS & Android</p>
+                <p>Watch a Demo</p>
+                <p>Customers</p>
+                <p>API</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p> All Right Reserved.</p>
+    </footer>
+</body>
+</html>
